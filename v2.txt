@@ -1,0 +1,7 @@
+For the v2 migration, we will need to make some changes to the database schema to support these new features.
+
+To allow for multiple playlists per user, we can create a new table called "playlists" that has a foreign key referencing the "users" table. This will allow a user to have multiple playlists associated with their account.
+
+To support multiple account types, we can add a new column to the "users" table called "account_type" which will store the account type of each user. We can also create a new table called "account_types" which will store the details of each account type (e.g. privileges, features, etc.) and have a foreign key in the "users" table to link each user to their account type.
+
+The migration process itself would involve creating the new tables and columns, migrating any existing data to the new schema, and updating the application code to work with the new schema.
